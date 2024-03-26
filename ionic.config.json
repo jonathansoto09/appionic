@@ -1,0 +1,7 @@
+{
+  "name": "EncuestasPublico",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

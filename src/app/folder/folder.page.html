@@ -1,0 +1,282 @@
+<style>
+  section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+</style>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      <strong>
+        {{ folder }}
+      </strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ 16 }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+   <form novalidate [formGroup]="encuesta" *ngIf="folder === 'Encuesta al cliente'">
+    <div style="margin-top: 1vh;">
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">1.- Que tal te parecio la atencion del personal?</label>
+        </div>
+        <div class="form-check-label" style="margin-top: 1vh;">
+          
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input"
+          formControlName="pregunta1">
+          <label for="">Muy buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          <label for="">Buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          <label for="">Regular</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          <label for="">Mala</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          <label for="">Muy mala</label>
+        </div>
+        
+      </div>
+
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">2.- Volverias a consumir algun servicio?</label>
+        </div>
+        <div class="form-check-label" style="margin-top: 1vh;">
+          
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">De acuerdo</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Probablemente</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">No</label>
+        </div>
+        
+      </div>
+
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">3.- Que tal te parecio el servicio?</label>
+        </div>
+        <div class="form-check-label" style="margin-top: 1vh;">
+          
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Muy buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Regular</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Mala</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for=""> Muy mala</label>
+        </div>
+        
+      </div>
+
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">4.- Que tal te parecio la experiencia?</label>
+        </div>
+        <div class="form-check-label" style="margin-top: 1vh;">
+          
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Muy buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Buena</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Regular</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Mala</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for=""> Muy mala</label>
+        </div>
+        
+      </div>
+
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">5.- Recomendarias nuestros servicios?</label>
+        </div>
+        <div class="form-check-label" style="margin-top: 1vh;">
+          
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Si</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">Talvez</label>
+          <input type="checkbox"
+          style="margin-left: 2vh; margin-right: .5vh;"
+          class="form-check-input">
+          
+          <label for="">No</label>
+        </div>
+        
+      </div>
+
+      <div class="form-group" style="margin-bottom: 5vh;">
+        <div>
+          <label for="pregunta1">6.- Tienes algun comentario para mejorar nuestros servicio?</label>
+        </div>
+        <br>
+        <input type="text"
+        style="width: 70%; border-radius: 10px;"
+        placeholder="Ingresa aqui tu opinion"
+        formControlName="comentarios">
+      </div>
+
+      <div style="margin-bottom: 3vh;">
+        <button mat-raised-button color="primary" (click)="finalizar()" 
+        style="background:#0763dbbb; color: white; border-radius: 5px; height: 5vh;">
+        <i class="pi pi-check-circle"></i> &nbsp; Finalizar
+        </button>
+      </div>
+
+      <!---<div>
+        <span style="font-style:italic;"> <strong><em>Gracias por su tiempo</em></strong></span>
+      </div>--->
+    </div>
+   </form> 
+
+   <form novalidate [formGroup]="periodo" *ngIf="folder !== 'Encuesta al cliente'">
+    <div>
+      <div style="display: flex; justify-content:center;">
+       
+       <div class="form-group" style="margin-bottom: 5vh;">
+         <div>
+           <label for="f1">Fecha de inicio: </label>
+         </div>
+   
+         <input 
+         class="form-control"
+         style="border-radius: 10px; height: 80%;"
+         type="date" 
+         id="f1"  
+         name="f1" 
+         formControlName="f1">
+       </div>
+     
+       <div class="form-group" style="margin-bottom: 5vh;">
+         <div>
+           <label for="f2">Fecha final: </label>
+         </div>
+         &nbsp;
+         <label>-----</label>
+         &nbsp;
+         <input 
+         class="form-control"
+         style="border-radius: 10px; height: 80%;"
+         type="date" 
+         id="f2" 
+         name="f2" 
+         formControlName="f2">
+       </div>
+      <!-- <select>
+         <option *ngFor="let obj of meses" [ngValue]="obj">
+           {{obj}}
+         </option>
+       </select>-->
+      </div>
+ 
+      <div style="margin-top: 5vh;">
+       <button mat-raised-button color="primary" (click)="reporte()" 
+       style="background:#0763dbbb; color: white; border-radius: 5px; height: 5vh;">
+       <i class="pi pi-download"></i> &nbsp; Descargar excel
+       </button>
+     </div>
+     
+     </div>
+   </form>
+      </div>
+</ion-content>
