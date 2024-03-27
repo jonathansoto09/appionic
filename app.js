@@ -2,9 +2,42 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { Pool } = require('pg');
-
+const path = require('path');
+const { exec } = require('child_process');
 const app = express();
 const port = 3000;
+
+// Ejecuta el comando npm install
+const installDependencies = () => {
+    console.log('Instalando dependencias...');
+    exec('npm install', (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error al instalar dependencias: ${error}`);
+            return;
+        }
+        console.log(stdout);
+        console.error(stderr);
+        console.log('Dependencias instaladas correctamente.');
+    });
+};
+
+/////// empaquetamos toda la aplicacion aqui 
+const checkCode = () => {
+  console.log('Check code...');
+  exec('npm run build', (error, stdout, stderr) => {
+      if (error) {
+          console.error(`Error al crear el archivos: ${error}`);
+          return;
+      }
+      console.log(stdout);
+      console.error(stderr);
+      console.log('Dependencias creadas correctamente.');
+  });
+};
+
+
+installDependencies();
+checkCode();
 
 const pool = new Pool({
   user: 'postgres',
@@ -14,8 +47,10 @@ const pool = new Pool({
   port: 5432,
 });
 
+/////// mandamos a hablar a la carpeta generada ./www
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'www')));
 
 app.get('/api/users', async (req, res) => {
   try {
